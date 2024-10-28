@@ -37,12 +37,35 @@ class _CounterState extends State<Counter> {
               style: TextStyle(fontSize: 22.0),
             ),
             Row(
-              
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                OutlinedButton(onPressed: increment, child: Icon(Icons.add)),
                 OutlinedButton(
-                    onPressed: decrement, child: Icon(Icons.minimize)),
+                  onPressed: increment,
+                  child: Icon(Icons.add, size: 24.0,
+       ),
+                  style: OutlinedButton.styleFrom(
+                      padding: EdgeInsets.all(12.0), shape: CircleBorder()),
+                ),
+                SizedBox(
+                  width: 16.0,
+                ),
+                OutlinedButton(
+  onPressed: decrement,
+  style: OutlinedButton.styleFrom(
+    shape: CircleBorder(),
+    minimumSize: Size(48, 48), // Ensure the button has a consistent size
+
+    padding: EdgeInsets.zero, // Remove padding for exact alignment
+  ),
+  child: Center( // Ensures the icon stays centered
+    child: Icon(
+      Icons.remove, // Use Icons.remove for consistency with decrement
+      size: 24.0,
+      
+    ),
+  ),
+)
+,
               ],
             )
           ],
